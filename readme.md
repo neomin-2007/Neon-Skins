@@ -1,4 +1,4 @@
-# 🎀 NEON SKINS - Seu plugin de skins avançado para Minecraft 1.8.9
+NEONSKINS
 
 ![GitHub](https://img.shields.io/github/license/seu-usuario/neon-skins?color=ff69b4)
 ![GitHub release](https://img.shields.io/github/v/release/seu-usuario/neon-skins?color=ff69b4)
