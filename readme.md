@@ -40,10 +40,9 @@ O plugin foi desenvolvido com foco em eficiência:
 
 ## 🖼️ Mostruário
 
-![one](https://imgur.com/blvIeA5.png)
-![two](https://imgur.com/onJeC7G.png)
-![three](https://imgur.com/W0794XY.ng)
-![four](https://imgur.com/SJh0imm.png)
+| ![1](https://imgur.com/blvIeA5.png) | ![2](https://imgur.com/onJeC7G.png) |
+|--------------------------------------|--------------------------------------|
+| ![3](https://imgur.com/W0794XY.png) | ![4](https://imgur.com/SJh0imm.png) |
 
 ## 📥 Instalação
 
