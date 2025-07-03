@@ -15,4 +15,6 @@
   - Cache do usuário com seus dados temporários
   - Cache das skins utilizadas recentemente
 
+🪄 **Mostruário**
+
 
