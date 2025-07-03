@@ -1,4 +1,4 @@
-# 🎀 NEON SKINS
+# 🎀 NEON SKINS 🎀 Seu plugin de skins
 
 🧪 **Compatibilidade**
   > O plugin atualmente suporte apenas a versão 1.8.9,
