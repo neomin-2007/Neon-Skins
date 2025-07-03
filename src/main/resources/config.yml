@@ -1,0 +1,41 @@
+#
+#███╗   ██╗███████╗ ██████╗ ███╗   ██╗    ███████╗██╗  ██╗██╗███╗   ██╗███████╗
+#████╗  ██║██╔════╝██╔═══██╗████╗  ██║    ██╔════╝██║ ██╔╝██║████╗  ██║██╔════╝
+#██╔██╗ ██║█████╗  ██║   ██║██╔██╗ ██║    ███████╗█████╔╝ ██║██╔██╗ ██║███████╗
+#██║╚██╗██║██╔══╝  ██║   ██║██║╚██╗██║    ╚════██║██╔═██╗ ██║██║╚██╗██║╚════██║
+#██║ ╚████║███████╗╚██████╔╝██║ ╚████║    ███████║██║  ██╗██║██║ ╚████║███████║
+#╚═╝  ╚═══╝╚══════╝ ╚═════╝ ╚═╝  ╚═══╝    ╚══════╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝╚══════╝
+#
+
+database:
+  type: "SQLITE"                            # Você pode utilizar MYSQL ou SQLITE.
+  table_name: "skins_data"                  # Nome da tabela criada no banco de dados.
+  cached_skin: true                         # Caso 'true' armazena as skins em cache temporário.
+  cache_clear_on_leave: false               # Caso 'true' remove os jogadores do cache temporário.
+  SQLite-data:
+    SQLite-archive: "skinsDatabase.sql"     # Nome do arquivo criado pelo banco de dados (SQLITE).
+  mySQL-data:
+    hostname: "localhost:3306"              # IP referenciando o banco de dados. (MYSQL)
+    database: "server_development"          # Banco de Dados específico. (MYSQL)
+    username: "root"                        # Nome de usuário do banco de dados. (MySQL)
+    password: ""                            # Senha do usuário do banco de dados. (MYSQL)
+
+permissions:
+  skin-help: "skin.use"                     # Permissão para utilizar o /skin ajuda
+  skin-change: "skin.change"                # Permissão para poder usar /skin alterar
+  skin-change-other: "skin.change_other"    # Permissão para poder usar /skin alterar <outro>...
+  skin-copy: "skin.copy"                    # Permissão para poder usar /skin copiar <outro>
+
+messages:
+  skin-no-permission: "&c&lNEON SKINS &cVocê não pode executar este comando!"
+  skin-change-no-permission: "&c&lNEON SKINS &cVocê não pode usar o comando de skins! Requer a permissão (neonSkins.skin_change)"
+  skin-change-other-no-permission: "&c&lNEON SKINS &cVocê não pode mudar a skin de outro jogador! Requer a permissão (neonSkins.skin_change_other)"
+  skin-copy-no-permission: "&c&lNEON SKINS &cVocê não pode copiar a skin de outro jogador! Requer a permissão (neonSkins.skin_copy)"
+
+  change: "&e&lNEON SKINS &eSua skin foi &fatualizada &ecom sucesso! \n&ePor favor, faça &flogin &enovamente no servidor."
+  change-other: "&e&lNEON SKINS &eVocê atualizou a skin de %player%!"
+  not-changed: "&c&lNEON SKINS &cOcorreu um erro e não conseguimos mudar sua skin."
+  copy: "&e&lNEON SKINS &eVocê copiou a skin de &f%player% &ecom sucesso! \n&ePor favor, faça &flogin &enovamente no servidor."
+  cant-copy-self: "&c&lNEON SKINS &cVocê não pode copiar a sua própria skin."
+  already-same-skin: "&c&lNEON SKINS &cVocê já está utilizando esta skin."
+  offline-player: "&c&lNEON SKINS &cO jogador está offline."

@@ -1,0 +1,7 @@
+name: NeonSkins
+version: 1.0.0
+author: Neomin
+main: org.neomin.neonSkins.NeonSkins
+description: Seu sistema de skins.
+commands:
+  skin:
