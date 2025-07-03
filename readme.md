@@ -1,8 +1,8 @@
 # NEON SKINS - Seu plugin gratuito de skins!
 
 🧪 **Compatibilidade**
-  > <h1>O plugin atualmente suporte apenas a versão 1.8.9,<b></b>
-  > mas há previsão do suporte ser extendido em breve.</h1>
+  > O plugin atualmente suporte apenas a versão 1.8.9,<br></br>
+  > mas há previsão do suporte ser extendido em breve.
 
 🛠 **Recursos do Plugin**
 - Diversas configurações personalizadas
