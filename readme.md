@@ -28,9 +28,8 @@
   - Cache de usuário (dados temporários)
   - Cache de skins recentes
 - 🎭 Suporte a skins customizadas por:
-  - URL de imagens
-  - Arquivos locais
-  - Nomes de jogadores
+  - UUID único/próprio do MineSkin
+  - Nomes de jogadores originais
 
 ## ⚡ Performance
 
@@ -38,7 +37,6 @@ O plugin foi desenvolvido com foco em eficiência:
 - 🚀 Baixo consumo de recursos
 - ⏳ Tempos de resposta rápidos
 - 📊 Sistema de cache configurável
-- 🔄 Atualizações assíncronas para não travar o servidor
 
 ## 🖼️ Mostruário
 
@@ -46,24 +44,7 @@ O plugin foi desenvolvido com foco em eficiência:
 
 ## 📥 Instalação
 
-1. Baixe o arquivo .jar mais recente na seção [Releases](https://github.com/seu-usuario/neon-skins/releases)
+1. Baixe o arquivo .jar mais recente na seção [Releases](https://github.com/seu-usuario/Neon-Skins/releases)
 2. Coloque na pasta `plugins` do seu servidor
 3. Reinicie o servidor
 4. Configure conforme necessário no arquivo `plugins/NeonSkins/config.yml`
-
-## ⚙️ Configuração
-
-Exemplo básico de configuração:
-```yaml
-database:
-  type: "sqlite" # ou "mysql"
-  mysql:
-    host: "localhost"
-    port: 3306
-    database: "neonskins"
-    username: "usuario"
-    password: "senha"
-
-cache:
-  player_cache_time: 3600 # 1 hora em segundos
-  skin_cache_time: 86400 # 24 horas em segundos
