@@ -1,8 +1,8 @@
 # NEON SKINS
 
-![GitHub](https://img.shields.io/github/license/seu-usuario/neon-skins?color=ff69b4)
-![GitHub release](https://img.shields.io/github/v/release/seu-usuario/neon-skins?color=ff69b4)
-![GitHub issues](https://img.shields.io/github/issues/seu-usuario/neon-skins?color=ff69b4)
+![GitHub](https://img.shields.io/github/license/neomin-2007/Neon-Skins?color=ff69b4)
+![GitHub release](https://img.shields.io/github/v/release/neomin-2007/Neon-Skins?color=ff69b4)
+![GitHub issues](https://img.shields.io/github/issues/neomin-2007/Neon-Skins?color=ff69b4)
 
 🤖 Um plugin eficiente e otimizado para gerenciamento de skins em servidores Minecraft 1.8.9, com suporte de duas fontes imensas de possíveis skins e armazenamento eficiente.
 
