@@ -40,7 +40,10 @@ O plugin foi desenvolvido com foco em eficiência:
 
 ## 🖼️ Mostruário
 
-![Exemplo de Skin](https://exemplo.com/skin-example.png) *(Imagem ilustrativa)*
+![one](https://imgur.com/blvIeA5.png)
+![two](https://imgur.com/onJeC7G.png)
+![three](https://imgur.com/W0794XY.ng)
+![four](https://imgur.com/SJh0imm.png)
 
 ## 📥 Instalação
 
