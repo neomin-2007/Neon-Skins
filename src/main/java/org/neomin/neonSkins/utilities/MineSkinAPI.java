@@ -23,23 +23,9 @@ public class MineSkinAPI {
     private final NeonSkins plugin;
 
     public boolean updateSkin(Player player, String uuid) {
-        final EntityPlayer eP = ((CraftPlayer) player).getHandle();
-        final GameProfile gP = eP.getProfile();
-
-        final PropertyMap pm = gP.getProperties();
-
         final Pair<String, String> skin_pair = plugin.getCached_skin().getOrDefault(uuid, getSkin(uuid));
         if (skin_pair == null) return false;
-
-        pm.removeAll("textures");
-        pm.put("textures", new Property("textures", skin_pair.getKey(), skin_pair.getValue()));
-
-        if (!plugin.getCached_skin().containsKey(uuid)) {
-            plugin.getCached_skin().put(uuid, skin_pair);
-        }
-
-        Bukkit.getOnlinePlayers().forEach(p -> p.hidePlayer(player));
-        Bukkit.getOnlinePlayers().forEach(p -> p.showPlayer(player));
+        new SkinUpdate(plugin).apply(player, uuid, skin_pair.getKey(), skin_pair.getValue());
         return true;
     }
 

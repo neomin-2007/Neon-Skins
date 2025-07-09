@@ -5,13 +5,16 @@ import com.comphenix.protocol.ProtocolManager;
 import javafx.util.Pair;
 import lombok.Getter;
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.neomin.neonSkins.commands.SkinCMD;
 import org.neomin.neonSkins.configuration.FileManager;
 import org.neomin.neonSkins.configuration.SkinPlayer;
 import org.neomin.neonSkins.database.SkinsDatabase;
+import org.neomin.neonSkins.listeners.PlayerEvents;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 @Getter
 public class NeonSkins
@@ -34,11 +37,20 @@ extends JavaPlugin {
         skinsDatabase = new SkinsDatabase(this);
         skinsDatabase.startConnection();
 
+        Bukkit.getPluginManager().registerEvents(new PlayerEvents(this), this);
+
         Bukkit.getPluginCommand("skin").setExecutor(new SkinCMD(this));
     }
 
     @Override
     public void onDisable() {
+        for (Player player : Bukkit.getOnlinePlayers()) {
+            final SkinPlayer skinPlayer = cached_players.get(player.getName());
+            if (skinPlayer == null || !skinPlayer.isValid()) continue;
 
+            skinsDatabase.getInstructions().savePlayerData(player.getName());
+        }
+
+        skinsDatabase.getInstructions().closeConnection();
     }
 }

@@ -1,6 +1,7 @@
 package org.neomin.neonSkins.database;
 
 import javafx.util.Pair;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.neomin.neonSkins.NeonSkins;
 import org.neomin.neonSkins.configuration.SkinPlayer;
@@ -13,10 +14,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.HashMap;
 
+@Getter
 @RequiredArgsConstructor
 public class SkinsDatabase {
 
     private final NeonSkins plugin;
+    private SQLInstructions instructions;
     private Connection connection;
 
     private final HashMap<String, Pair<String, String>> cached_skin = new HashMap<>();
@@ -25,9 +28,10 @@ public class SkinsDatabase {
     public void createTable() {
         String tableName = plugin.getFileManager().getString("database.table_name");
         String sql = "CREATE TABLE IF NOT EXISTS " + tableName + " ("
-                + "uuid VARCHAR(36) PRIMARY KEY,"
-                + "skin_id TEXT,"
-                + "is_default BOOLEAN"
+                + "name VARCHAR(36) PRIMARY KEY,"
+                + "skinId TEXT,"
+                + "texture TEXT,"
+                + "signature TEXT"
                 + ");";
 
         try (Statement stmt = connection.createStatement()) {
@@ -47,6 +51,7 @@ public class SkinsDatabase {
                 MySQLConnection();
             }
 
+            instructions = new SQLInstructions(plugin, connection);
             createTable();
         } catch(SQLException | ClassNotFoundException e) {
             e.printStackTrace();
@@ -62,6 +67,7 @@ public class SkinsDatabase {
             plugin.saveResource(fileName, false);
         }
 
+        Class.forName("org.sqlite.JDBC");
         final String url = "jdbc:sqlite:" + sqlFile.getAbsolutePath();
         connection = DriverManager.getConnection(url);
     }

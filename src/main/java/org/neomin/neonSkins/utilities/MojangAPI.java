@@ -15,6 +15,7 @@ import org.bukkit.entity.Player;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.neomin.neonSkins.NeonSkins;
+import org.neomin.neonSkins.configuration.SkinPlayer;
 
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -40,20 +41,7 @@ public class MojangAPI {
         final Pair<String, String> skin_pair = plugin.getCached_skin().getOrDefault(uuid.toString(), getSkin(uuid.toString()));
         if (skin_pair == null) return false;
 
-        final EntityPlayer eP = ((CraftPlayer) player).getHandle();
-        final GameProfile gP = eP.getProfile();
-
-        final PropertyMap pm = gP.getProperties();
-
-        pm.removeAll("textures");
-        pm.put("textures", new Property("textures", skin_pair.getKey(), skin_pair.getValue()));
-
-        if (!plugin.getCached_skin().containsKey(uuid.toString())) {
-            plugin.getCached_skin().put(uuid.toString(), skin_pair);
-        }
-
-        Bukkit.getOnlinePlayers().forEach(p -> p.hidePlayer(player));
-        Bukkit.getOnlinePlayers().forEach(p -> p.showPlayer(player));
+        new SkinUpdate(plugin).apply(player, uuidOrName, skin_pair.getKey(), skin_pair.getValue());
         return true;
     }
 

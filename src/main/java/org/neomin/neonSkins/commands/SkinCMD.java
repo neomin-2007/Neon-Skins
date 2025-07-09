@@ -15,8 +15,7 @@ import org.neomin.neonSkins.utilities.MojangAPI;
 public class SkinCMD implements CommandExecutor {
 
     private final NeonSkins plugin;
-    private static final String PERMISSION_PREFIX = "permissions.skin-";
-    private static final String MESSAGE_PREFIX = "messages.";
+    private final String MESSAGE_PREFIX = "messages.";
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
@@ -48,6 +47,12 @@ public class SkinCMD implements CommandExecutor {
     private void handleChangeCommand(CommandSender sender, String[] args) {
         if (!hasPermission(sender, "change")) {
             sendMessage(sender, "change-no-permission");
+            return;
+        }
+
+        if (args.length <= 1) {
+            sender.sendMessage("§ePor favor, alterar <uuid/ajuda/nome da skin>");
+            sender.sendMessage("§ePor favor, alterar <jogador> <uuid/nome da skin>");
             return;
         }
 
@@ -107,12 +112,12 @@ public class SkinCMD implements CommandExecutor {
 
         final Player player = (Player) sender;
 
-        if (!hasPermission(player, "copy-cmd")) {
+        if (!hasPermission(player, "copy")) {
             sendMessage(player, "copy-no-permission");
             return;
         }
 
-        if (args.length == 1) {
+        if (args.length <= 1) {
             player.sendMessage("§ePor favor, utilize /skin copiar <jogador>");
             return;
         }
@@ -133,12 +138,19 @@ public class SkinCMD implements CommandExecutor {
 
     private void showChangeHelp(CommandSender sender) {
         sender.sendMessage("");
-        sender.sendMessage("§e§lMINESKIN.ORG (UUID)");
+        sender.sendMessage("§e§lMINESKIN.ORG (UUID ÚNICO)");
         sender.sendMessage("    §eVocê pode direcionar o uuid único");
         sender.sendMessage("    §7obtido na URL de skins do MineSkin.");
         sender.sendMessage("");
         sender.sendMessage("§eExemplo: (SKIN BMO)");
         sender.sendMessage("    §e/skin alterar 3110d0a38eb64a3aaf33225719c2f855");
+        sender.sendMessage("");
+        sender.sendMessage("§e§lMOJANG API (NOME)");
+        sender.sendMessage("    §eVocê pode digitar o nome do");
+        sender.sendMessage("    §7jogador original para obter sua skin.");
+        sender.sendMessage("");
+        sender.sendMessage("§eExemplo: (SKIN BMO)");
+        sender.sendMessage("    §e/skin alterar BMO");
         sender.sendMessage("");
     }
 
@@ -155,12 +167,12 @@ public class SkinCMD implements CommandExecutor {
         }
 
         if (hasPermission(sender, "change-other")) {
-            sender.sendMessage("§e/skin alterar <nome> <uuid/nome da skin>");
+            sender.sendMessage("§e/skin alterar <jogador> <uuid/nome da skin>");
             availableCommands++;
         }
 
         if (hasPermission(sender, "copy")) {
-            sender.sendMessage("§e/skin copiar <nome>");
+            sender.sendMessage("§e/skin copiar <jogador>");
             availableCommands++;
         }
 
@@ -173,11 +185,7 @@ public class SkinCMD implements CommandExecutor {
     }
 
     private boolean hasPermission(CommandSender sender, String permission) {
-        return sender.hasPermission(plugin.getFileManager().getString(PERMISSION_PREFIX + permission));
-    }
-
-    private String getPermission(String permission) {
-        return plugin.getFileManager().getString(PERMISSION_PREFIX + permission);
+        return sender.hasPermission(plugin.getFileManager().getString("permissions.skin-" + permission));
     }
 
     private void sendMessage(CommandSender sender, String message) {
