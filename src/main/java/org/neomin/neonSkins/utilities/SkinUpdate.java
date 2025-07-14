@@ -3,9 +3,9 @@ package org.neomin.neonSkins.utilities;
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.properties.Property;
 import com.mojang.authlib.properties.PropertyMap;
-import javafx.util.Pair;
 import lombok.RequiredArgsConstructor;
 import net.minecraft.server.v1_8_R3.EntityPlayer;
+import org.apache.commons.lang3.tuple.Pair;
 import org.bukkit.Bukkit;
 import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.entity.Player;
@@ -28,7 +28,7 @@ public class SkinUpdate {
 
         if (plugin.getFileManager().getBoolean("database.cached_skin")) {
             if (!plugin.getCached_skin().containsKey(skin_id.toString())) {
-                plugin.getCached_skin().put(skin_id.toString(), new Pair<>(texture, signature));
+                plugin.getCached_skin().put(skin_id.toString(), Pair.of(texture, signature));
             }
         }
 

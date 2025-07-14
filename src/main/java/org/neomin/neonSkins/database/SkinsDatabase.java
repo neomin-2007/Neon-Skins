@@ -1,8 +1,8 @@
 package org.neomin.neonSkins.database;
 
-import javafx.util.Pair;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import org.apache.commons.lang3.tuple.Pair;
 import org.neomin.neonSkins.NeonSkins;
 import org.neomin.neonSkins.configuration.SkinPlayer;
 
@@ -21,9 +21,6 @@ public class SkinsDatabase {
     private final NeonSkins plugin;
     private SQLInstructions instructions;
     private Connection connection;
-
-    private final HashMap<String, Pair<String, String>> cached_skin = new HashMap<>();
-    private final HashMap<String, SkinPlayer> cached_players = new HashMap<>();
 
     public void createTable() {
         String tableName = plugin.getFileManager().getString("database.table_name");

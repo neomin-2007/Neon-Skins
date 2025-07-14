@@ -8,7 +8,6 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.neomin.neonSkins.NeonSkins;
 import org.neomin.neonSkins.configuration.SkinPlayer;
-import org.neomin.neonSkins.utilities.MineSkinAPI;
 import org.neomin.neonSkins.utilities.SkinUpdate;
 
 @RequiredArgsConstructor

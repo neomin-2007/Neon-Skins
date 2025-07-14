@@ -3,19 +3,12 @@ package org.neomin.neonSkins.utilities;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import com.mojang.authlib.GameProfile;
-import com.mojang.authlib.properties.Property;
-import com.mojang.authlib.properties.PropertyMap;
-import javafx.util.Pair;
 import lombok.RequiredArgsConstructor;
-import net.minecraft.server.v1_8_R3.EntityPlayer;
-import org.bukkit.Bukkit;
-import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
+import org.apache.commons.lang3.tuple.Pair;
 import org.bukkit.entity.Player;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.neomin.neonSkins.NeonSkins;
-import org.neomin.neonSkins.configuration.SkinPlayer;
 
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -70,7 +63,7 @@ public class MojangAPI {
             String value = settings.get("value").getAsString();
             String signature = settings.get("signature").getAsString();
 
-            return new Pair<>(value, signature);
+            return Pair.of(value, signature);
         } catch (Exception e) {
             e.printStackTrace();
             return null;
