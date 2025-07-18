@@ -1,8 +1,8 @@
 # NEON SKINS
 
-[![GitHub](https://img.shields.io/github/license/neomin-2007/neon-skins?color=ff69b4)
-![GitHub release](https://img.shields.io/github/v/release/neomin-2007/neon-skins?color=ff69b4)
-![GitHub issues](https://img.shields.io/github/issues/neomin-2007/neon-skins?color=ff69b4)](https://github.com/neomin-2007/Neon-Skins/edit/main/readme.md)
+[![GitHub](https://img.shields.io/github/license/neomin-2007/neonskins?color=ff69b4)
+![GitHub release](https://img.shields.io/github/v/release/neomin-2007/neonskins?color=ff69b4)
+![GitHub issues](https://img.shields.io/github/issues/neomin-2007/neonskins?color=ff69b4)](https://github.com/neomin-2007/Neon-Skins/edit/main/readme.md)
 
 🤖 Um plugin eficiente e otimizado para gerenciamento de skins em servidores Minecraft 1.8.9, com suporte de duas fontes imensas de possíveis skins e armazenamento eficiente.
 
@@ -48,7 +48,7 @@ O plugin foi desenvolvido com foco em eficiência:
 
 ## 📥 Instalação
 
-1. Baixe o arquivo .jar mais recente na seção [Releases](https://github.com/seu-usuario/Neon-Skins/releases)
+1. Baixe o arquivo .jar mais recente na seção [Releases](https://github.com/seu-usuario/NeonSkins/releases)
 2. Coloque na pasta `plugins` do seu servidor
 3. Reinicie o servidor
 4. Configure conforme necessário no arquivo `plugins/NeonSkins/config.yml`
