@@ -1,7 +1,5 @@
 package org.neomin.neonSkins;
 
-import com.comphenix.protocol.ProtocolLibrary;
-import com.comphenix.protocol.ProtocolManager;
 import lombok.Getter;
 import org.apache.commons.lang3.tuple.Pair;
 import org.bukkit.Bukkit;
@@ -51,6 +49,8 @@ extends JavaPlugin {
             skinsDatabase.getInstructions().savePlayerData(player.getName());
         }
 
-        skinsDatabase.getInstructions().closeConnection();
+        if (skinsDatabase != null) {
+            skinsDatabase.close();
+        }
     }
 }

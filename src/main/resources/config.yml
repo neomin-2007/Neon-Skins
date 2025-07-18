@@ -19,6 +19,13 @@ database:
     database: "server_development"          # Banco de Dados específico. (MYSQL)
     username: "root"                        # Nome de usuário do banco de dados. (MySQL)
     password: ""                            # Senha do usuário do banco de dados. (MYSQL)
+    hikari-settings:
+      setMaximumPoolSize: 30                # Define o número máximo de conexões que o pool pode manter ativas simultaneamente.
+      setMinimumIdle: 5                     # Define o número mínimo de conexões ociosas que o pool mantém disponíveis.
+      setConnectionTimeout: 30000           # Tempo máximo que uma requisição aguarda por uma conexão disponível. (30000 = 30 segundos)
+      setIdleTimeout: 600000                # Tempo que uma conexão ociosa permanece no pool antes de ser fechada. (600000 = 10 minutos)
+      setMaxLifetime: 1800000               # Tempo máximo de vida de uma conexão, independente de uso. (1800000 = 30 minutos)
+      setLeakDetectionThreshold: 30000      # Detecta conexões que foram adquiridas mas não fechadas. (30000 = 30 segundos)
 
 permissions:
   skin-help: "skin.use"                     # Permissão para utilizar o /skin ajuda
