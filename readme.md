@@ -21,7 +21,7 @@
 - ✅ Configuração personalizável via arquivo YAML
 - ✅ API personalizada para gerenciar o NeonSkins.
 - ✅ Conexão direta com a API oficial da Mojang
-- ✅Integração com a API do [MineSkin](https://mineskin.org)
+- ✅ Integração com a API do [MineSkin](https://mineskin.org)
 
 ### 🔧 Armazenamentos
 - 💾 Suporte a múltiplos bancos de dados:
