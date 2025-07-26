@@ -4,7 +4,7 @@
 ![GitHub release](https://img.shields.io/github/v/release/neomin-2007/neonskins?color=ff69b4)
 ![GitHub issues](https://img.shields.io/github/issues/neomin-2007/neonskins?color=ff69b4)](https://github.com/neomin-2007/Neon-Skins/edit/main/readme.md)
 
-🤖 Um plugin eficiente e otimizado para gerenciamento de skins em servidores Minecraft 1.8.9, com suporte de duas fontes imensas de possíveis skins e armazenamento eficiente.
+🤖 O **NeonSkins** é um plugin avançado para servidores Minecraft que permite o gerenciamento completo de skins de jogadores. Com integração às APIs do Mojang e MineSkin, oferece funcionalidades robustas para aplicação, cache e persistência de skins personalizadas.
 
 ## 🧪 Compatibilidade
 
