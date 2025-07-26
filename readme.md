@@ -18,10 +18,12 @@
 ## 🛠 Recursos Principais
 
 ### 🔧 Funcionalidades
-- ✅ Configuração personalizável via arquivo YAML
-- ✅ API personalizada para gerenciar o NeonSkins.
-- ✅ Conexão direta com a API oficial da Mojang
-- ✅ Integração com a API do [MineSkin](https://mineskin.org)
+- 🎭 **Aplicação de skins** via textura/assinatura ou nick/URL
+- 🔄 **Integração dupla** com Mojang API e MineSkin API
+- 💾 **Sistema de cache** em memória para performance otimizada
+- 🗄️ **Persistência em banco de dados** para dados permanentes
+- 🚀 **API pública** para desenvolvedores externos
+- ⚡ **Fallback automático** entre diferentes provedores de skin
 
 ### 🔧 Armazenamentos
 - 💾 Suporte a múltiplos bancos de dados:
