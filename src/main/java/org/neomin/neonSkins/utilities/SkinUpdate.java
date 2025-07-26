@@ -5,6 +5,7 @@ import com.mojang.authlib.properties.Property;
 import com.mojang.authlib.properties.PropertyMap;
 import lombok.RequiredArgsConstructor;
 import net.minecraft.server.v1_8_R3.EntityPlayer;
+import net.minecraft.server.v1_8_R3.PacketPlayOutRespawn;
 import org.apache.commons.lang3.tuple.Pair;
 import org.bukkit.Bukkit;
 import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
@@ -17,7 +18,7 @@ public class SkinUpdate {
 
     private final NeonSkins plugin;
 
-    public void apply(Player player, String skin_id, String texture, String signature) {
+    public boolean apply(Player player, String skin_id, String texture, String signature) {
         final EntityPlayer eP = ((CraftPlayer) player).getHandle();
         final GameProfile gP = eP.getProfile();
 
@@ -41,5 +42,7 @@ public class SkinUpdate {
 
         Bukkit.getOnlinePlayers().forEach(p -> p.hidePlayer(player));
         Bukkit.getOnlinePlayers().forEach(p -> p.showPlayer(player));
+
+        return true;
     }
 }
